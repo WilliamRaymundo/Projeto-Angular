@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-title>Novo Usuários</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="usuarios.nome" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" [(ngModel)]="usuarios.cpf" name="cpf">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Endereço" [(ngModel)]="usuarios.endereco" name="endereco">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [(ngModel)]="usuarios.telefone" name="telefone">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="criarUsuarios()" color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancelar()">
+        Cancelar
+    </button>
+</mat-card>
