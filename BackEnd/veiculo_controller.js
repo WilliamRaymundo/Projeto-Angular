@@ -1,12 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var Usuario = require('./usuarios')
+var Veiculo = require('./veiculos')
 router.post('/', (req, res) => {
-    let e = new Usuario({
-        nome: req.body.nome,
-        cpf: req.body.cpf,
-        endereco: req.body.endereco,
-        telefone: req.body.telefone,
+    let e = new Veiculo({
+        placa: req.body.placa,
+        cor: req.body.cor,
     });
     e.save((err, estud) => {
         if (err)
@@ -16,7 +14,7 @@ router.post('/', (req, res) => {
     })
 })
 router.get('/', (req, res) => {
-    Usuario.find().exec((err, est) => {
+    Veiculo.find().exec((err, est) => {
         if (err)
             res.status(500).send(err);
         else
@@ -24,7 +22,7 @@ router.get('/', (req, res) => {
     })
 })
 router.delete('/:id', (req, res) => {
-    Usuario.deleteOne({ _id: req.params.id }, (err) => {
+    Veiculo.deleteOne({ _id: req.params.id }, (err) => {
         if (err)
             res.status(500).send(err);
         else
@@ -32,16 +30,14 @@ router.delete('/:id', (req, res) => {
     })
 })
 router.patch('/:id', (req, res) => {
-    Usuario.findById(req.params.id, (err, est) => {
+    Veiculo.findById(req.params.id, (err, est) => {
         if (err)
             res.status(500).send(err);
         else if (!est)
             res.status(404).send({});
         else {
-            est.nome = req.body.nome,
-                est.cpf = req.body.cpf,
-                est.endereco = req.body.endereco,
-                est.telefone = req.body.telefone,
+            est.placa = req.body.placa,
+                est.cor = req.body.cor,
                 est.save((err, est) => {
                     if (err)
                         res.status(500).send(err);
