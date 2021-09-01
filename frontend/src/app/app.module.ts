@@ -26,6 +26,7 @@ import { ManutencaoUsuariosComponent } from './views/manutencao-usuarios/manuten
 import { ManutencaoVeiculosComponent } from './views/manutencao-veiculos/manutencao-veiculos.component';
 import { ManutencaoHistoricosComponent } from './views/manutencao-historicos/manutencao-historicos.component';
 import { UsuariosCreateComponent } from './componentes/usuarios/usuarios-create/usuarios-create.component';
+import { VeiculosCreateComponent } from './componentes/veiculos/veiculos-create/veiculos-create.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { UsuariosCreateComponent } from './componentes/usuarios/usuarios-create/
     ManutencaoUsuariosComponent,
     ManutencaoVeiculosComponent,
     ManutencaoHistoricosComponent,
-    UsuariosCreateComponent
+    UsuariosCreateComponent,
+    VeiculosCreateComponent
   ],
   imports: [
     BrowserModule,
