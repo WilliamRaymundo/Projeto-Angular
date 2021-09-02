@@ -4,11 +4,22 @@
         <mat-form-field>
             <input matInput placeholder="placa" [(ngModel)]="veiculo.placa" name="placa">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="cor" [(ngModel)]="veiculo.cor" name="cor">
-        </mat-form-field>
+     
+            <mat-form-field appearance="fill">
+                <mat-label>COR</mat-label>
+                <select matNativeControl required [(ngModel)]="veiculo.cor" name="cor">
+                  <option value="Preto">Preto</option>
+                  <option value="Branco">Branco</option>
+                  <option value="Cinza">Cinza</option>
+                  <option value="Natural">Natural</option>
+                  <option value="Vermelho">Vermelho</option>
+                  <option value="Azul">Azul</option>
+                  <option value="Verde">Verde</option>
+                  <option value="Laranja">Laranja</option>
+                </select>
+              </mat-form-field>
     </form>
-    <button mat-raised-button (click)="criarVeiculo()" color="primary">
+    <button mat-raised-button (click)="criarVeiculo()">
         Salvar
     </button>
     <button mat-raised-button (click)="cancelar()">
