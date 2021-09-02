@@ -27,6 +27,7 @@ import { ManutencaoVeiculosComponent } from './views/manutencao-veiculos/manuten
 import { ManutencaoHistoricosComponent } from './views/manutencao-historicos/manutencao-historicos.component';
 import { UsuariosCreateComponent } from './componentes/usuarios/usuarios-create/usuarios-create.component';
 import { VeiculosCreateComponent } from './componentes/veiculos/veiculos-create/veiculos-create.component';
+import { HistoricoCreateComponent } from './componentes/historico/historico-create/historico-create.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VeiculosCreateComponent } from './componentes/veiculos/veiculos-create/
     ManutencaoVeiculosComponent,
     ManutencaoHistoricosComponent,
     UsuariosCreateComponent,
-    VeiculosCreateComponent
+    VeiculosCreateComponent,
+    HistoricoCreateComponent
   ],
   imports: [
     BrowserModule,
