@@ -22,4 +22,7 @@ export class HistoricoService {
   create(historico: Historico): Observable<Historico> {
     return this.http.post<Historico>(this.url, historico)
   }
+  read(): Observable<Historico[]> {
+    return this.http.get<Historico[]>(this.url);
+  }
 }

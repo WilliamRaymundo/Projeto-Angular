@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from './componentes/template/footer/footer.component';
 import { MenuComponent } from './componentes/template/menu/menu.component';
+import { MatTableModule } from '@angular/material/table' 
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -25,9 +26,12 @@ import { MatCardModule } from '@angular/material/card';
 import { ManutencaoUsuariosComponent } from './views/manutencao-usuarios/manutencao-usuarios.component';
 import { ManutencaoVeiculosComponent } from './views/manutencao-veiculos/manutencao-veiculos.component';
 import { ManutencaoHistoricosComponent } from './views/manutencao-historicos/manutencao-historicos.component';
+
 import { UsuariosCreateComponent } from './componentes/usuarios/usuarios-create/usuarios-create.component';
 import { VeiculosCreateComponent } from './componentes/veiculos/veiculos-create/veiculos-create.component';
 import { HistoricoCreateComponent } from './componentes/historico/historico-create/historico-create.component';
+
+import { HistoricoReadComponent } from './componentes/historico/historico-read/historico-read.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,8 @@ import { HistoricoCreateComponent } from './componentes/historico/historico-crea
     ManutencaoHistoricosComponent,
     UsuariosCreateComponent,
     VeiculosCreateComponent,
-    HistoricoCreateComponent
+    HistoricoCreateComponent,
+    HistoricoReadComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +61,8 @@ import { HistoricoCreateComponent } from './componentes/historico/historico-crea
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
