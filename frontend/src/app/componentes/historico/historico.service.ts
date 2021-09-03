@@ -8,6 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class HistoricoService {
   url = "http://localhost:3000/historico"
+  salvar = false;
+  historico: Historico = {
+    entrada: '',
+    saida: '',
+    permissao: '',
+    capPlaca: '',
+  }
   constructor(
     private snackBar: MatSnackBar,
     private http: HttpClient
@@ -25,4 +32,8 @@ export class HistoricoService {
   read(): Observable<Historico[]> {
     return this.http.get<Historico[]>(this.url);
   }
+  update(historico: Historico): Observable<Historico> {
+    const urlAlterar = `${this.url}/${historico._id}`;
+    return this.http.patch<Historico>(urlAlterar, historico)
+    }
 }

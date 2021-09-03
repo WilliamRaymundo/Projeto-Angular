@@ -2,14 +2,14 @@ table {
     width: 100%;
 }
 
-.edit {
+.permitir {
     margin-right: 10px;
 }
 
-.edit>i {
-    color: #3826d9;
+.permitir>i {
+    color: #00c521;
 }
 
-.delete>i {
+.negar>i {
     color: #fc2e42;
 }

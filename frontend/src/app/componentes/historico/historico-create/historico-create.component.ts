@@ -9,19 +9,34 @@ import { Historico } from '../historico.model';
 })
 export class HistoricoCreateComponent implements OnInit {
   historico: Historico = {
-    entrada: '', saida: '', permissao: '',capPlaca: ''
+    entrada: '', saida: '', permissao: '', capPlaca: ''
   }
+
   constructor(
     private historicoService: HistoricoService,
     private router: Router
   ) { }
   ngOnInit(): void {
+    if (this.historicoService.salvar) {
+      this.historico = { entrada: '', saida: '', permissao: '', capPlaca: '' }
+    } else {
+      this.historico = this.historicoService.historico;
+      this.criarHistorico();
+    }
   }
   criarHistorico(): void {
-    this.historicoService.create(this.historico).subscribe(() => {
-      this.historicoService.showMessage('historico cadastrado com sucesso!')
-      this.router.navigate(['/historicos'])
-    })
+    if (this.historicoService.salvar) {
+      console.log("valor da variável salvar: ", this.historicoService.salvar)
+      this.historicoService.create(this.historico).subscribe(() => {
+        this.historicoService.showMessage('historico cadastrado com sucesso!')
+        this.router.navigate(['/historicos'])
+      })
+    } else {
+      this.historicoService.update(this.historico).subscribe(() => {
+        this.historicoService.showMessage('Estudante alterado com sucesso!')
+      
+      })
+    }
   }
   cancelar(): void {
     this.router.navigate(['/historicos'])

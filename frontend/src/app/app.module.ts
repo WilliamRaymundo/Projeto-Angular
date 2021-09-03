@@ -63,6 +63,7 @@ import { HistoricoReadComponent } from './componentes/historico/historico-read/h
     MatFormFieldModule,
     MatInputModule,
     MatTableModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
