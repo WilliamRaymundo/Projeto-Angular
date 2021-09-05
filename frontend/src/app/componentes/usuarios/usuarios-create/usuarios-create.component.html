@@ -2,17 +2,19 @@
     <mat-card-title>Novo Usuários</mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="usuarios.nome" name="name">
+            <input matInput placeholder="Nome" maxlength="25" [(ngModel)]="usuarios.nome" name="name">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="CPF" [(ngModel)]="usuarios.cpf" name="cpf">
+            <input mask="000.000.000-00" matInput placeholder="CPF" [(ngModel)]="usuarios.cpf" name="cpf">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Endereço" [(ngModel)]="usuarios.endereco" name="endereco">
+            <input matInput placeholder="Endereço" maxlength="35" [(ngModel)]="usuarios.endereco" name="endereco">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Telefone" [(ngModel)]="usuarios.telefone" name="telefone">
-        </mat-form-field>
+            <input matInput prefix="+55 " mask="(00)00000-0000||(00)0000-0000" placeholder="Telefone/Celular"
+                [(ngModel)]="usuarios.telefone" name="telefone">
+                
+        </mat-form-field> 
     </form>
     <button mat-raised-button (click)="criarUsuarios()">
         Salvar

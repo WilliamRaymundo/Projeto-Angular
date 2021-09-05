@@ -1,3 +1,5 @@
+
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
@@ -33,6 +35,12 @@ import { HistoricoCreateComponent } from './componentes/historico/historico-crea
 
 import { HistoricoReadComponent } from './componentes/historico/historico-read/historico-read.component';
 
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +70,8 @@ import { HistoricoReadComponent } from './componentes/historico/historico-read/h
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    NgxMaskModule.forRoot(maskConfig),
     
   ],
   providers: [],
