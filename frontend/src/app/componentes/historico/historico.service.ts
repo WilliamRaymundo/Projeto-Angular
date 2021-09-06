@@ -26,6 +26,7 @@ export class HistoricoService {
       verticalPosition: "top"
     });
   }
+ 
   create(historico: Historico): Observable<Historico> {
     return this.http.post<Historico>(this.url, historico)
   }
