@@ -22,4 +22,7 @@ export class UsuariosService {
   create(usuarios: Usuarios): Observable<Usuarios> {
     return this.http.post<Usuarios>(this.url, usuarios)
   }
+  read(): Observable<Usuarios[]> {
+    return this.http.get<Usuarios[]>(this.url);
+  }
 }
