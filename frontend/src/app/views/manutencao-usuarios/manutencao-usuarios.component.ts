@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuariosService } from '../../componentes/usuarios/usuarios.service';
 
 @Component({
   selector: 'app-manutencao-usuarios',
@@ -8,11 +9,13 @@ import { Router } from '@angular/router';
 })
 export class ManutencaoUsuariosComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private usuariosService: UsuariosService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
   navegarUsuariosCreate(): void {
+    this.usuariosService.salvar = true;
     this.router.navigate(['/usuarios/create'])
   }
 

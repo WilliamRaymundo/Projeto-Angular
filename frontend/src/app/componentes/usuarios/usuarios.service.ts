@@ -8,6 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class UsuariosService {
   url = "http://localhost:3000/Usuarios"
+  salvar = false;
+  usuarios: Usuarios = {
+    nome: '',
+    cpf: '',
+    endereco: '',
+    telefone: ''
+  }
+
   constructor(
     private snackBar: MatSnackBar,
     private http: HttpClient
@@ -25,4 +33,8 @@ export class UsuariosService {
   read(): Observable<Usuarios[]> {
     return this.http.get<Usuarios[]>(this.url);
   }
+  update(usuarios: Usuarios): Observable<Usuarios> {
+    const urlAlterar = `${this.url}/${usuarios._id}`;
+    return this.http.patch<Usuarios>(urlAlterar, usuarios)
+    }
 }

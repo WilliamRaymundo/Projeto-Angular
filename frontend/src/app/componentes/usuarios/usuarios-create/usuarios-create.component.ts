@@ -19,12 +19,25 @@ export class UsuariosCreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (this.usuariosService.salvar) {
+      this.usuarios = { nome: '', cpf: '', endereco: '', telefone: '' }
+    } else {
+      this.usuarios = this.usuariosService.usuarios;
+    }
   }
   criarUsuarios(): void {
-    this.usuariosService.create(this.usuarios).subscribe(() => {
-      this.usuariosService.showMessage('Usuarios cadastrado com sucesso!')
-      this.router.navigate(['/usuarios'])
-    })
+    if (this.usuariosService.salvar) {
+      console.log("valor da variável salvar: ", this.usuariosService.salvar)
+      this.usuariosService.create(this.usuarios).subscribe(() => {
+        this.usuariosService.showMessage('usuarios cadastrado com sucesso!')
+        this.router.navigate(['/usuarios'])
+      })
+    } else {
+      this.usuariosService.update(this.usuarios).subscribe(() => {
+        this.usuariosService.showMessage('usuarios alterado com sucesso!')
+        this.router.navigate(['/usuarios'])
+      })
+    }
   }
   cancelar(): void {
     this.router.navigate(['/usuarios'])
