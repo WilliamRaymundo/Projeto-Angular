@@ -36,5 +36,9 @@ export class UsuariosService {
   update(usuarios: Usuarios): Observable<Usuarios> {
     const urlAlterar = `${this.url}/${usuarios._id}`;
     return this.http.patch<Usuarios>(urlAlterar, usuarios)
-    }
+  }
+  delete(usuarios: Usuarios): Observable<Usuarios> {
+    const urlExcluir = `${this.url}/${usuarios._id}`;
+    return this.http.delete<Usuarios>(urlExcluir)
+  }
 }

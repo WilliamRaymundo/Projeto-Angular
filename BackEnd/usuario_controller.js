@@ -7,6 +7,7 @@ router.post('/', (req, res) => {
         cpf: req.body.cpf,
         endereco: req.body.endereco,
         telefone: req.body.telefone,
+        ofNumber: req.body.ofNumber,
     });
     e.save((err, estud) => {
         if (err)
@@ -42,6 +43,7 @@ router.patch('/:id', (req, res) => {
                 est.cpf = req.body.cpf,
                 est.endereco = req.body.endereco,
                 est.telefone = req.body.telefone,
+                est.ofNumber = req.body.ofNumber,
                 est.save((err, est) => {
                     if (err)
                         res.status(500).send(err);

@@ -9,6 +9,7 @@ import { ManutencaoHistoricosComponent } from './views/manutencao-historicos/man
 import { UsuariosCreateComponent } from './componentes/usuarios/usuarios-create/usuarios-create.component';
 import { VeiculosCreateComponent } from './componentes/veiculos/veiculos-create/veiculos-create.component';
 import { HistoricoCreateComponent } from './componentes/historico/historico-create/historico-create.component';
+import { UsuariosDeleteComponent } from './componentes/usuarios/usuarios-delete/usuarios-delete.component';
 const routes: Routes = [{
   path: "",
   component: HomeComponent
@@ -20,6 +21,10 @@ const routes: Routes = [{
 {
   path: "usuarios/create",
   component: UsuariosCreateComponent
+},
+{
+  path: "usuarios/delete",
+  component: UsuariosDeleteComponent
 },
 {
   path: "veiculos",

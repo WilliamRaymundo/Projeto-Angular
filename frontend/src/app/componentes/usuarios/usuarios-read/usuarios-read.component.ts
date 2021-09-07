@@ -28,7 +28,8 @@ export class UsuariosReadComponent implements OnInit {
     this.router.navigate(['/usuarios/create'])
   }
   excluir(usuarios: Usuarios): void {
-    console.log("testando excluir", usuarios);
+    this.usuariosService.usuarios = usuarios;
+    this.router.navigate(['/usuarios/delete'])
   }
 
 }

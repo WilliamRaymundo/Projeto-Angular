@@ -5,5 +5,6 @@ var usuarioSchema = new Schema({
     cpf: String,
     endereco: String,
     telefone: String,
+    ofNumber: [Number],
 }, { versionKey: false })
 module.exports = mongoose.model("Usuario", usuarioSchema)
