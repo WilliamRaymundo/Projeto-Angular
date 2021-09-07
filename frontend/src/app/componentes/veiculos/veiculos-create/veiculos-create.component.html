@@ -2,11 +2,11 @@
     <mat-card-title>Novo Veiculo</mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="placa" [(ngModel)]="veiculo.placa" name="placa">
+            <input matInput required placeholder="Placa" mask="AAA-0000" [(ngModel)]="veiculo.placa" name="placa">
         </mat-form-field>
      
             <mat-form-field appearance="fill">
-                <mat-label>COR</mat-label>
+                <mat-label>Cor</mat-label>
                 <select matNativeControl required [(ngModel)]="veiculo.cor" name="cor">
                   <option value="Preto">Preto</option>
                   <option value="Branco">Branco</option>

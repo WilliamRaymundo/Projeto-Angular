@@ -22,4 +22,7 @@ export class VeiculoService {
   create(veiculo: Veiculos): Observable<Veiculos> {
     return this.http.post<Veiculos>(this.url, veiculo)
   }
+  read(): Observable< Veiculos[]> {
+    return this.http.get< Veiculos[]>(this.url);
+  }
 }

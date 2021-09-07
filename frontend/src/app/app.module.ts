@@ -38,6 +38,7 @@ import { HistoricoReadComponent } from './componentes/historico/historico-read/h
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { UsuariosReadComponent } from './componentes/usuarios/usuarios-read/usuarios-read.component';
 import { UsuariosDeleteComponent } from './componentes/usuarios/usuarios-delete/usuarios-delete.component';
+import { VeiculosReadComponent } from './componentes/veiculos/veiculos-read/veiculos-read.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -59,6 +60,7 @@ const maskConfig: Partial<IConfig> = {
     HistoricoReadComponent,
     UsuariosReadComponent,
     UsuariosDeleteComponent,
+    VeiculosReadComponent,
   ],
   imports: [
     BrowserModule,
