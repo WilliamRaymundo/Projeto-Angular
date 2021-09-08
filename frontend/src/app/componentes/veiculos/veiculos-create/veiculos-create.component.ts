@@ -13,16 +13,29 @@ export class VeiculosCreateComponent implements OnInit {
     placa: '', cor: '',
   }
   constructor(
-    private veiculoService: VeiculoService ,
+    private veiculoService: VeiculoService,
     private router: Router
   ) { }
   ngOnInit(): void {
+    if (this.veiculoService.salvar) {
+      this.veiculo = { placa: '', cor: '' }
+    } else {
+      this.veiculo = this.veiculoService.veiculos;
+    }
   }
   criarVeiculo(): void {
-    this.veiculoService.create(this.veiculo).subscribe(() => {
-      this.veiculoService.showMessage('veiculo cadastrado com sucesso!')
-      this.router.navigate(['/veiculos'])
-    })
+    if (this.veiculoService.salvar) {
+      console.log("valor da variável salvar: ", this.veiculoService.salvar)
+      this.veiculoService.create(this.veiculo).subscribe(() => {
+        this.veiculoService.showMessage('veiculos cadastrado com sucesso!')
+        this.router.navigate(['/veiculos'])
+      })
+    } else {
+      this.veiculoService.update(this.veiculo).subscribe(() => {
+        this.veiculoService.showMessage('veiculos alterado com sucesso!')
+        this.router.navigate(['/veiculos'])
+      })
+    }
   }
   cancelar(): void {
     this.router.navigate(['/veiculos'])

@@ -8,6 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class VeiculoService {
   url = "http://localhost:3000/veiculos"
+  salvar = false;
+  veiculos: Veiculos = {
+    placa: '',
+    cor: '',
+  }
   constructor(
     private snackBar: MatSnackBar,
     private http: HttpClient
@@ -22,7 +27,11 @@ export class VeiculoService {
   create(veiculo: Veiculos): Observable<Veiculos> {
     return this.http.post<Veiculos>(this.url, veiculo)
   }
-  read(): Observable< Veiculos[]> {
-    return this.http.get< Veiculos[]>(this.url);
+  read(): Observable<Veiculos[]> {
+    return this.http.get<Veiculos[]>(this.url);
+  }
+  update(veiculos: Veiculos): Observable<Veiculos> {
+    const urlAlterar = `${this.url}/${veiculos._id}`;
+    return this.http.patch<Veiculos>(urlAlterar, veiculos)
   }
 }
