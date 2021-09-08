@@ -34,4 +34,8 @@ export class VeiculoService {
     const urlAlterar = `${this.url}/${veiculos._id}`;
     return this.http.patch<Veiculos>(urlAlterar, veiculos)
   }
+  delete(veiculos: Veiculos): Observable<Veiculos> {
+    const urlExcluir = `${this.url}/${veiculos._id}`;
+    return this.http.delete<Veiculos>(urlExcluir)
+  }
 }

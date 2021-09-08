@@ -26,6 +26,8 @@ export class VeiculosReadComponent implements OnInit {
     this.router.navigate(['/veiculos/create'])
   }
   excluir(veiculos: Veiculos): void {
-    console.log("testando excluir", veiculos);
+    this.VeiculoService.veiculos = veiculos;
+    this.router.navigate(['/veiculos/delete'])
+  
   }
 }

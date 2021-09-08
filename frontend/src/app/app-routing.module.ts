@@ -10,6 +10,7 @@ import { UsuariosCreateComponent } from './componentes/usuarios/usuarios-create/
 import { VeiculosCreateComponent } from './componentes/veiculos/veiculos-create/veiculos-create.component';
 import { HistoricoCreateComponent } from './componentes/historico/historico-create/historico-create.component';
 import { UsuariosDeleteComponent } from './componentes/usuarios/usuarios-delete/usuarios-delete.component';
+import { VeiculosDeleteComponent } from './componentes/veiculos/veiculos-delete/veiculos-delete.component';
 const routes: Routes = [{
   path: "",
   component: HomeComponent
@@ -33,6 +34,10 @@ const routes: Routes = [{
 {
   path: "veiculos/create",
   component: VeiculosCreateComponent
+},
+{
+  path: "veiculos/delete",
+  component: VeiculosDeleteComponent
 },
 {
   path: "historicos",

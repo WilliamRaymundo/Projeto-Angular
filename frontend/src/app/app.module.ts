@@ -39,6 +39,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { UsuariosReadComponent } from './componentes/usuarios/usuarios-read/usuarios-read.component';
 import { UsuariosDeleteComponent } from './componentes/usuarios/usuarios-delete/usuarios-delete.component';
 import { VeiculosReadComponent } from './componentes/veiculos/veiculos-read/veiculos-read.component';
+import { VeiculosDeleteComponent } from './componentes/veiculos/veiculos-delete/veiculos-delete.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -61,6 +62,7 @@ const maskConfig: Partial<IConfig> = {
     UsuariosReadComponent,
     UsuariosDeleteComponent,
     VeiculosReadComponent,
+    VeiculosDeleteComponent,
   ],
   imports: [
     BrowserModule,
